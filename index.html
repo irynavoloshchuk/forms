@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <title>Document</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+        <div class="main">
+          <div class="switch-buttons">
+            <input type="checkbox" id="check">
+              <label for="check">
+                <span>Sign-In</span>
+                <span>Registration</span>
+              </label>
+          </div>
+
+          <div class="form-container">
+            <form action="#" name="sign-in form">
+              <h2>Login</h2>
+              <label class="visually-hidden" for="email">Email</label>
+              <input type="email" placeholder="Enter your email address" name="email" required>
+              <label class="visually-hidden" for="password">Password</label>
+              <input type="password" placeholder="Enter your password" name="password" required>
+              <div class="checkbox-container">
+                <p class="custom-checkbox">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Keep me signed-in</label>
+                </p>
+                <a href="#">Forgot password?</a>
+              </div>
+              <button type="submit">Continue</button>
+            </form>
+
+            <div class="sign-up-wrapper">
+              <div class="sign-up-first"> 
+                <p>Don't have an account?</p>
+                <a href="#">Sign-Up</a>
+              </div>
+              <div class="sign-up-second">        
+              <p>Or Sign-Up using</p>
+             </div>
+              <ul class="social-icons-list">
+                <li class="social-icon"><a class="icon-link" href="#">
+                  <svg>
+                    <use href="images/sprite.svg#facebook"></use>
+                  </svg>
+                  <li class="social-icon"><a class="icon-link" href="#">
+                    <svg>
+                      <use href="images/sprite.svg#instagram"></use>
+                    </svg>
+                  </a></li>
+                </a></li>
+                <li class="social-icon"><a class="icon-link" href="#">
+                  <svg>
+                    <use href="images/sprite.svg#linkedin"></use>
+                  </svg>
+                </a></li>
+              </ul>
+            </div>   
+          </div>
+
+        </div>        
+    </div>
+  </div>
+    
+
+    
+</body>
+</html>
