@@ -9,14 +9,7 @@
   font-display: swap;
 }
 
-html,
-body {
-	  height: 100%;
-    background:url(../images/background.png) no-repeat;
-    background-size: cover;
-    position: relative;
-  
-}
+
 
 body {
 	font-family: "Roboto", sans-serif;
@@ -30,6 +23,9 @@ body {
     height: 100vh;
     margin: 0 auto;
     position: relative;
+    background:url(../images/background.png) no-repeat;
+    background-size: cover;
+    overflow: hidden;
   
 
 
@@ -39,32 +35,33 @@ body {
     margin-left: auto;
     max-width: 496px;
     position: relative;
-    height: 100vh;
+    height: 100%;
+    overflow: auto;
+    background: rgba(233, 233, 233, 0.251);
+    backdrop-filter: blur(10px);
+    z-index: 2;
    
 
     
 }
 
-.container::before {
+/* .container::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: #E9E9E940;
+
   z-index: 1;
 
-}
+} */
 
 .wrapper::before {
 	content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #16151580;
+ inset: 0;
+    background: rgba(22, 21, 21, 0.502);
     z-index: 1;
 
 	
@@ -75,6 +72,7 @@ body {
     margin: 0 auto;
     position: relative;
     z-index: 2;
+    padding: 60px 0;
   
   
 }
@@ -83,25 +81,43 @@ body {
 
 .switch-buttons {
   margin-bottom: 75px;
-  padding-top: 60px;
-  display: inline-block;
   position: relative;
+
 }
 
 .switch-buttons input {
   position: absolute;
   opacity: 0;
   z-index: -10;
+
 }
 
 .switch-buttons input+label {
   display: flex;
-  width: 340px;
+  width: 100%;
   height: 36px;
   border-radius: 30px;
   border: 1px solid #153416;
   position: relative;
+  cursor: pointer;
 
+}
+
+
+.switch-buttons input+label {
+  display: flex;
+  width: 100%;
+  height: 36px;
+  border-radius: 30px;
+  border: 1px solid rgba(21, 52, 22);
+  position: relative;
+  cursor: pointer;
+
+}
+
+.switch-buttons input:focus+label {
+  border: 1px solid rgba(255, 255, 255, 1); 
+  
 }
 
 .switch-buttons input+label::before {
@@ -126,8 +142,8 @@ body {
 	align-items: center;
 }
 
-.switch-buttons input+label:hover::before {
-  left: calc(100% - 169px); 
+.switch-buttons input:checked+label::before {
+  transform: translateX(100%);
   background-color: #153416; 
 }
 
@@ -138,7 +154,7 @@ body {
   font-weight: 400;
   font-size: 30px;
   text-align: center;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
 
 }
 
@@ -151,6 +167,11 @@ body {
   margin-bottom: 15px;
   border: none;
   background:  rgba(146, 145, 145, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.form-container input:last-of-type{
+  margin-bottom: 20px;
 }
 
 .form-container input::placeholder {
@@ -159,13 +180,13 @@ body {
 }
 
 .form-container input:hover {
-  background: rgb(162, 159, 159);
+  background: rgba(162, 159, 159);
   
 }
 
 .form-container input:focus{
-  background: rgb(187, 184, 184);
-  outline-color: rgb(187, 184, 184);
+  background: rgba(187, 184, 184);
+  outline-color: rgba(187, 184, 184);
    
  }
 
@@ -183,7 +204,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
-  padding-top: 5px;
+ 
 
 }
 
@@ -250,7 +271,6 @@ body {
 
 .social-icons-list {
 	display: flex;
-	gap: 20px;
 	flex-direction: row;
 	padding-top: 16px;
   justify-content: center;
@@ -263,12 +283,12 @@ body {
 .icon-link svg {
 	width: 44px;
 	height:44px;
-	fill: #153416;
+	fill: rgba(21, 52, 22);
 	transition: fill .2s linear;
 }
 
 .icon-link:hover svg, .join .icon-link:hover svg  {
-	fill: #fff;
+	fill: rgba(255, 255, 255);
 }
 
 /* button */
@@ -276,15 +296,16 @@ button {
   background-color: #153416;
   width: 100%;
   border-radius: 30px;
-  padding: 15px 0;
-  color: #fff;
+  padding: 15px;
+  color: rgba(255, 255, 255);
   font-size: 12px;
   margin-bottom: 40px;
+  cursor: pointer;
 
 }
 
 button:hover {
-    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255);
     color: #153416;
 }
 
@@ -307,7 +328,7 @@ button:hover {
 }
 
 .sign-up-first p {
-  color: #153416;
+  color: rgba(21, 52, 22);
 }
 
 .sign-up-first a:hover,
